@@ -1,0 +1,16 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<title>objects</title>
+</head>
+<body>
+<p id="div1"></p>
+<p id="demo"></p>
+<script type="text/javascript">
+var bike ={make:"KTM", model:"RC390", power:"34BHP", bikes:function(){
+	return "<br>" + this.make+ "<br>"+ this.model+"<br>"+this.power;
+}};
+document.getElementById("demo").innerHTML="The Vechicle Details is "+ bike.bikes()+".";
+</script>
+</body>
+</html>

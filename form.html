@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript form validation</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style type="text/css" media="screen">
+	span
+	{
+		color:red;
+	}	
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<div class="row">
+				<div class="col-md-12">
+					<form method="post" id="myform"  onsubmit="return validate()">
+						<div class="col-md-4">
+							<label>Name</label>
+							<input class="form-control" type="text" name="name" id="bx1" onkeyup="return validate()"><br>
+							<span id="er1"></span><br><br>
+						</div>
+						<div class="col-md-4">
+							<label>Email</label>
+							<input class="form-control" type="email" name="email" id="bx2" onkeyup="return validate()"><br>
+							<span id="er2"></span><br><br>
+						</div>
+						<div class="col-md-4">
+							<label>Phone No</label>
+							<input class="form-control" type="text" name="phone" id="bx3" onkeyup="return validate()"><br>
+							<span id="er3"></span><br><br>
+						</div>
+						<div class="col-md-12">
+							<div class="col-md-4">
+								<label>Gender</label>
+								<input class="form-check-input" type="radio" name="gender" id="bx4" value="male"  checked="true">Male
+								<input class="form-check-input" type="radio" name="gender" id="bx4" value="female">Female
+								<br><span id="er4"></span><br><br>
+							</div>
+							<div class="col-md-4">
+								<label>Skills</label>
+								<input class="form-check-input" type="checkbox" name="skills[]" id="skills" value="php" onclick="return validate(0)">PHP			  
+								<input class="form-check-input" type="checkbox" name="skills[]" id="skills" value="wp" onclick="return validate(1)">Wordpress
+								<input class="form-check-input" type="checkbox" name="skills[]" id="skills" value="bs" onclick="return validate(2)">Boostrap
+								<input class="form-check-input" type="checkbox" name="skills[]" id="skills" value="jq" onclick="return validate(3)">Jquery 
+								<br><span id="er5"></span><br><br>
+							</div>
+							<div class="col-md-4">
+								<label>Experiance</label>
+								<select class="form-control">
+        						<option value="computers">0-1</option>
+        						<option value="notebook">1-2</option>
+        						<option value="tablet">2-3</option>
+      							</select>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<!-- <center><input   class="btn btn-success" id="sub" type="submit" name="submit" value="register" onclick="return show_val()"></center> -->
+						</div>
+					</form>
+							<center><button class="btn btn-success" onclick="show_val()">SEND</button></center>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<p id="box1"></p>
+				<p id="box2"></p>
+				<p id="box3"></p>
+				<p id="box4"></p>
+				<p id="box7"></p>
+				
+		</div>
+	</div>
+</div>
+</body>
+<script>
+
+
+function show_val()
+{
+a =	document.getElementById("myform").elements[0].value;
+b =	document.getElementById("myform").elements[1].value;
+c =	document.getElementById("myform").elements[2].value;
+d =	document.getElementById("myform").elements[3].value;
+document.getElementById("box1").innerHTML = a;
+document.getElementById("box2").innerHTML = b;
+document.getElementById("box3").innerHTML = c;
+document.getElementById("box4").innerHTML = d;
+
+
+
+var array = []
+var checkboxes = document.querySelectorAll('input[id=skills]:checked');
+
+for (var i = 0; i < checkboxes.length; i++) 
+{
+  array.push(checkboxes[i].value);
+
+  document.getElementById("box7").innerHTML = array;
+
+}
+
+}
+</script>
+<script src="validate.js"></script>
+</html>

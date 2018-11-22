@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>javascript</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https:maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https:ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https:maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style type="text/css" media="screen">
+	.img-block{
+		position: absolute;
+		top:10%;
+		right:10%;
+		background-color: red;
+		width: 500px;
+		height: 500px;
+		background-image: url("mat1.jpg");
+	}
+	#img1 img
+	{
+		padding: 20px;
+		width:200px;
+		height:200px;
+	}	
+	.active
+	{
+		border: solid red 5px;
+	}
+	h1
+	{
+		text-align: center;
+		color: orange;
+		font-weight:bold;
+	}
+	.skill
+	{
+		background-color: orange;
+	}
+</style>
+</head>
+<body>
+
+	<div class="container">
+		<div class="row">
+			<h1>SELECT ONLY 2</h1>
+			<hr>
+			<div class="col-md-12 img_list">
+				
+				<div class="col-md-4"> 
+					<img src="mat1.jpg" alt="mat1" class=""  width="200px" height="200px" id="img01"> 
+				</div>
+				<div class="col-md-4">
+					<img src="mat2.jpg" alt="mat2" class="" width="200px" height="200px"> 
+				</div>
+				<div class="col-md-4">
+					<img src="mat3.jpg" alt="mat3" class="" width="200px" height="200px"> 
+				</div>
+			</div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<div id="img1">
+				
+			</div>
+
+			<button id="btn">click</button>
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+			</ul>
+		</div>
+	</body>
+	<!-- <script>
+		 function img_push()
+		  {
+		  	var array = [];
+		  	x = document.getElementsByClassName("skills");
+		  	for (var i = 0; i < x.length; i++ ) 
+		  	{
+		  		array.push(x[i].getAttribute("src"));
+		  		console.log(array);
+		  	}
+		  	y = document.getElementsByClassName("img1");
+		  	for (var j = 0; j <x.length; j++ )
+		  	{
+			  
+		  	var img = document.createElement("img");
+		  	img.src = array[j];	
+		  	var src = document.getElementById("img1");
+ 		 	src.appendChild(img);
+		
+		  	}
+		  }	
+		</script> -->
+		
+		<!-- <script>
+
+			var array = [];
+			var x = document.querySelector(".img_list");
+			var y = document.querySelector("#img1");
+			var v = document.querySelectorAll("#img1 img");
+			var u = document.querySelector('.active');
+			x.addEventListener("click",neel)
+
+			function neel(e)
+			{
+				var h = e.target.getAttribute("class");
+				console.log(h);
+				var k = e.target.hasAttribute("class");
+				console.log(k);
+
+				if(h == "")
+				{	
+					e.target.classList.add("active");
+					z = e.target.getAttribute("src");
+					array.push(z);
+					let img = document.createElement("img");
+					img.src = z;
+					img.setAttribute("class" ,"thumb");
+					y.appendChild(img);
+				}
+				else 
+				{	
+					y.parentNode.removeAttribute("y");
+
+				}
+			}
+		</script> -->
+		<script>
+				$(document).ready(function() {
+				$('ul').on('click', 'li', function()
+				{
+					$(this).fadeOut(500);
+				});
+
+
+				$('#btn').on('click',function(){
+					$('ul').append("<li>New list Item</li>");
+				});
+
+			});	
+		</script>
+		<script>
+				$(document).ready(function() {
+				$('.img_list').on('click', 'img', function()
+				{
+					$(this).fadeOut(500);
+				});
+
+
+				// $('#btn').on('click',function(){
+				// 	$('ul').append("<li>New list Item</li>");
+				// });
+
+			});	
+		</script>
+		</html>
+
+

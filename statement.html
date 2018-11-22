@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>statements</title>
+	<script type="text/javascript">
+		var x= 596;
+		var y= 632;
+		var z= (x+y)*10;
+		var a= x+y;
+		var b= x*y;
+		var c= x/y;
+		var d= a+b;
+		var str1= "neel";
+		var str2= "prasad";
+		var x1= 10;
+		x1+=5;
+		document.write(x1);
+		function myfunction(){
+		document.getElementsByClassName("stat1").innerHTML=document.write("The value of Z is"+z+".<br>");
+		document.getElementsByClassName("stat2").innerHTML=document.write("The value of Z is"+a+".<br>");
+		document.getElementsByClassName("stat3").innerHTML=document.write("The value of Z is"+b+".<br>");
+		document.getElementsByClassName("stat4").innerHTML=document.write("The value of Z is"+c+".<br>");
+		document.getElementsByClassName("stat5").innerHTML=document.write("The value of Z is"+(a+b)+".<br>");
+	}
+	</script>
+</head>
+<body>
+<p class="stat1"></p>
+<p class="stat2"></p>
+<p class="stat3"></p>
+<p class="stat4"></p>
+<p class="stat5"></p>
+<button type="button" onclick="myfunction()">click</button>
+<script type="text/javascript"> window.alert(z+a);
+document.write(str1+" " +str2);
+</script>
+<p id="demo"></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Check Box</title>
+</head>
+<body>
+	<label>Checkbox</label><br>
+	<input type="Checkbox" value="BE"  name="cheks"/>BE
+	<input type="Checkbox" value="Bsc" name="cheks"/>Bsc
+	<input type="Checkbox" value="BA"  name="cheks"/>BA
+	<input type="Checkbox" value="MA"  name="cheks"/>MA
+	<input type="Checkbox" value="Msc" name="cheks"/>Msc <br><br>
+	<input type="submit" name="Enter It.." onclick="yes();">
+</body>
+<script>
+	function yes() {
+		var all_location_id = document.querySelectorAll('input[name="cheks"]:checked');
+		var aIds = [];
+		for(var x = 0; x < all_location_id.length;  x++)
+		{
+		    aIds.push(all_location_id[x].value);
+		    
+		}
+		if((aIds.length) > 3 ){
+			alert('You Want Select Only Three...!');
+		}
+		var str = aIds.join(', ');
+		console.log(str);
+	}
+</script>
+</html>
+

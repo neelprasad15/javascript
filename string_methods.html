@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>String_Methods</title>
+</head>
+<body>
+	<p id="str1"></p>
+	<p id="demo"></p>
+	<p id="demo1"></p>
+	<p id="slice"></p>
+	<p id="sstr"></p>
+	<p id="sustr"></p>
+	<p id="ucase"></p>
+	<p id="lcase"></p>
+	<p id="ccat"></p>
+	<p id="dem"></p>
+	<p id="slit"></p>
+	
+<script type="text/javascript">
+	var str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ Alphabets";
+	var strs = "a,b,c,d,e,f";
+	document.getElementById("str1").innerHTML = str;
+	document.getElementById("demo").innerHTML = str.length;
+	document.getElementById("demo1").innerHTML = str.indexOf("K",19);
+	document.getElementById("slice").innerHTML = str.slice(8, -2); //startig from (1-8)----(-2)
+	document.getElementById("sstr").innerHTML = str.substring(8, -2); //between 2 to 5 similar to slice
+	document.getElementById("sustr").innerHTML = str.substr(2, 5); //starts from 2 to length 5
+	document.getElementById("ucase").innerHTML = str.toUpperCase(); //uppercase
+	document.getElementById("lcase").innerHTML = str.toLowerCase(); //lowercase
+	document.getElementById("ccat").innerHTML = str.concat("  ",strs); //concat
+	document.getElementById("slit").innerHTML = strs.split(" ,", 3); //Split
+</script>
+</body>
+</html>

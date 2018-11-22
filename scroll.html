@@ -1,0 +1,67 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>scroll</title>
+	<style type="text/css" media="screen">
+	nav ol{
+		margin-left:30px;
+		color:white;
+	}
+	nav ol li{
+		list-style:none;
+		display:inline-block;
+		width:130px;
+		padding:15px 0px;
+		text-align:center;
+	}
+	nav ol li:hover{
+		color:orange;
+		cursor:pointer;
+	}	
+	#mynav{
+		width:100%;
+		height:50px;
+		background-color:#242424;
+		border-radius:20px 20px 0px 0px;
+	}
+	.newnav
+	{
+		width:100%;
+		height:50px;
+		background-color:red !important;
+		border-radius:20px 20px 0px 0px;
+		position: fixed;
+	}
+</style>
+</head>
+<body>
+	<div id="container">
+		<nav id="mynav" >
+			<ol>
+				<li>Home</li>|
+				<li>About Us</li>|
+				<li>Services</li>|
+				<li>Profile</li>|
+				<li>Contact Us</li>
+			</ol>
+		</nav>
+		<img src="mat1.jpg" alt="">
+	</div>
+</body>
+<script>
+	
+window.onscroll = function() 
+{
+	myFunction()
+};
+
+function myFunction() {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    	
+        document.getElementById("mynav").className = "newnav";
+    } else {
+        document.getElementById("mynav").className = "";
+    }
+}
+</script>
+</html>

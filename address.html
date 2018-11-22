@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>home</title>
+</head>
+<body>
+	<section>
+		<form  method="post" accept-charset="utf-8">
+			<textarea col=15 row=6 id="perma" name="perma"></textarea>
+			<input type="checkbox" onclick="fun()" id="same">Both are same
+			<textarea col=15 row=6 id="temp" name="temp"></textarea>
+		</form>
+	</section>
+</body>
+	<script>
+	function fun() 
+	{
+		pa=document.getElementById('perma');
+		ta=document.getElementById('temp');	 
+		sa=document.getElementById('same');
+		if (sa.checked==true) 
+		{
+			pa.value=ta.value;
+			ta.diabled=true;
+		}
+		else
+		{
+			pa.value="";
+			ta.diabled=false;
+		}
+	}	
+	</script>
+</html>

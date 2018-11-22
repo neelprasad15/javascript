@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array</title>
+</head>
+<body>
+	<p id="demo"></p>
+	<p id="demo1"></p>
+	<button onclick="myFunction()">Try it</button>
+<script type="text/javascript">
+var cars = ["BMW","AUDI","BENZ", "VOLVO"];
+var truck = ["SCANIA", "MAN", "TATA"];
+var bikes = ["TVS", "HERO", "BAJAJ"];
+
+var vechicles = cars.concat(truck,bikes);
+
+document.getElementById("demo1").innerHTML = vechicles;
+
+cars.push ("VOLVO");
+
+document.getElementById("demo").innerHTML = cars[0] + "<br>" +
+cars;
+
+var clen = cars.length;
+
+var text = "<ul>";
+
+for (i = 0; i < clen; i++) {
+text += "<li>"+ cars[i] + "</li>";
+}
+text += "</ul>";
+
+document.getElementById("demo").innerHTML = text;
+// cars.push("JAGUAR");
+// cars.shift();
+// document.getElementById("demo").innerHTML = cars;
+
+
+// function myFunction () {
+// 	cars.unshift("BENTLEY");
+// 	document.getElementById("demo").innerHTML = cars;
+// }
+
+// function myFunction () {
+// 	cars.splice(2, 2);
+// 	document.getElementById("demo").innerHTML = cars;
+// }
+
+
+</script>
+</body>
+</html>

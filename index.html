@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Img js</title>
+</head>
+<body>
+	<img src="mat1.jpg" width="200px" alt="" onclick="fun('mat1')"/>
+	<img src="mat2.jpg" width="200px" alt="" onclick="fun('mat2')"/>
+	<img src="mat3.jpg" width="200px" alt="" onclick="fun('mat3')"/>
+	<img src="mat4.jpg" width="200px" alt="" onclick="fun('mat4')"/>
+	<div id="show">
+			
+	</div>
+	<div id="error" style="color: red;"></div>
+</body>
+<script type="text/javascript">
+	function fun(args){
+		var p = document.getElementById(args);
+		console.log(p);
+		if(p == null){
+			var node = document.createElement('IMG');
+			var textnode = document.createTextNode(args);
+			node.setAttribute("id", args);
+			node.setAttribute("src", args+'.jpg');
+			node.setAttribute("width", '200px');
+			node.appendChild(textnode);
+			document.getElementById('show').appendChild(node);
+			//var remove_child_node = document.querySelectorAll("[id*='"+args+"']");
+			var s = document.getElementById('show').querySelector("#"+args);
+
+			console.log(s);
+
+		} else {
+			var remove_child_node = document.querySelectorAll("[id*='"+args+"']");
+			for (var i = 0; i < remove_child_node.length; i++)
+    		remove_child_node[i].parentNode.removeChild(remove_child_node[i]);
+    		document.getElementById('error').innerHTML = 'You Cant Click the Image More than One Time';
+    		 return false;
+
+		}	
+
+	}
+
+
+
+	var obj = [{
+		'name':'hemanth',
+		'age':'52',
+		'none':'yus'
+	}];
+	console.log(obj);
+	for(var values of obj){
+		console.log(values);
+	}
+</script>
+</html>

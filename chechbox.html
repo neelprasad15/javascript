@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>checkbox</title>
+</head>
+<body>
+<form name=form1>
+<input type="checkbox" value="1" id="1" name="skills" onclick="myfun(0)">1
+<input type="checkbox" value="2" id="2" name="skills" onclick="myfun(1)">2
+<input type="checkbox" value="3" id="3" name="skills" onclick="myfun(2)">3
+<input type="checkbox" value="4" id="4" name="skills" onclick="myfun(3)">4
+<input type="checkbox" value="5" id="5" name="skills" onclick="myfun(4)">5 	
+</form>
+<div>
+	<p id="err_msg"></p>	
+</div>
+<script>
+	function myfun(j)
+{
+	var total=0;
+	var a = document.getElementsByName("skills");
+	for(var i=0; i<a.length; i++)
+	{
+		if(a[i].checked==true)
+		{
+			total = total+1;
+		}
+		 if(total>3)
+		{
+			document.getElementById("err_msg").innerHTML="select only 3";
+			a[j].checked = false;
+			return false;	
+		}
+	}
+}
+
+</script>
+</body>
+
+</html>
